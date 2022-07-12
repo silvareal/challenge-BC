@@ -1,0 +1,14 @@
+type Query {
+  Transactions: [Transaction] @listLength(min:1, max: 500)
+}
+
+type Transaction {
+  id: ID
+  name: String @fake(type: firstName)
+  status: String
+    @examples(values: ["pending", "success", "failed"])
+  type: String
+    @examples(values: ["credit", "debit"])
+  date: String 
+    @examples(values: ["2021-05-27", "2022-05-27", "2017-09-27", "2017-07-27", "2019-07-27"])
+}
