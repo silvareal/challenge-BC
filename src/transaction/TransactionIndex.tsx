@@ -142,7 +142,7 @@ export default function TransactionIndex(): JSX.Element {
       >
         {Object.keys(currentDateGroupedByDate)?.map(
           (transactionData: string, index: number) => (
-            <Box mt={5} key={index}>
+            <Box mt={5} key={index} data-testid={`transaction-item-${index}`}>
               <Typography variant="h5" fontWeight={700}>
                 {new Date(transactionData).toUTCString()}
               </Typography>
